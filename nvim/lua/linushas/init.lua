@@ -1,2 +1,2 @@
 require("linushas.remap")
-print("hello world")
+require("linushas.set")
