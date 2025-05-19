@@ -1,12 +1,10 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
@@ -27,4 +25,14 @@ return require('packer').startup(function(use)
 
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+
+    use 'glepnir/lspsaga.nvim'
+    use 'folke/trouble.nvim'
 end)
